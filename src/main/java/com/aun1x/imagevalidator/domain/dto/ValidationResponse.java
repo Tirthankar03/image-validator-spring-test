@@ -17,4 +17,7 @@ public class ValidationResponse {
     private Double effectiveDpi;
     private Double widthPct;
     private Double heightPct;
+
+    public ValidationResponse(String error, String s, Object o, Object o1, Object o2, Object o3) {
+    }
 }

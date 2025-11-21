@@ -1,18 +1,9 @@
 package com.aun1x.imagevalidator.controller;
 
-import com.aun1x.imagevalidator.domain.dto.ValidationResponse;
-import com.aun1x.imagevalidator.service.ImageValidationService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.NotNull;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import java.io.IOException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,20 +13,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
+import com.aun1x.imagevalidator.domain.dto.ValidationResponse;
+import com.aun1x.imagevalidator.service.ImageValidationService;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.DecimalMin;
 
 /**
  * REST Controller for the /api/validate endpoint.
  * Handles multipart uploads and returns JSON with validation results.
  */
 @RestController
-@RequiredArgsConstructor
-@Slf4j
 @Validated
 @Tag(name = "Image Validation", description = "API for validating image resolution and blurriness")
 public class ImageValidationController {
 
+    private static final Logger log = LoggerFactory.getLogger(ImageValidationController.class);
+
     private final ImageValidationService validationService;
+
+    public ImageValidationController(ImageValidationService validationService) {
+        this.validationService = validationService;
+    }
 
     /**
      * POST /api/validate

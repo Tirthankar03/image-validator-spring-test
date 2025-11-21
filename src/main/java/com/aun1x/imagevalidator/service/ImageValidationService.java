@@ -1,27 +1,30 @@
 package com.aun1x.imagevalidator.service;
 
-import lombok.extern.slf4j.Slf4j;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 
 /**
  * Service for validating uploaded images on resolution (target inches + DPI) and blurriness (Laplacian variance).
  * Returns a structured ValidationResult for flexible error handling.
  */
 @Service
-@Slf4j
 public class ImageValidationService {
+
+    private static final Logger log = LoggerFactory.getLogger(ImageValidationService.class);
 
     @Value("${app.image.default-target-dpi}")
     private int defaultTargetDpi;

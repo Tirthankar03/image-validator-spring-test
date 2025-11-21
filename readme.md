@@ -3,7 +3,7 @@
 [![Java](https://img.shields.io/badge/Java-17%2B-blue)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.0-green)](https://spring.io/projects/spring-boot)
 [![Maven](https://img.shields.io/badge/Maven-Central-red)](https://maven.apache.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 A production-ready Spring Boot REST API for validating uploaded images, focusing on **resolution quality** (based on target physical size and DPI) and **blurriness detection**. Ideal for document uploads like passports, Aadhaar cards, or ID proofs, where sharpness and sufficient resolution prevent poor-quality submissions.
 
@@ -240,14 +240,3 @@ class ImageValidationServiceTest {
 - "Invalid format": Corrupt file—retry upload.
 - High variance on noisy images: Raise threshold.
 
-## Contributing
-
-Fork, PR with tests. Issues? Open on GitHub.
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-*Built with ❤️ for robust document uploads. Questions? [Contact](mailto:dev@example.com).*
