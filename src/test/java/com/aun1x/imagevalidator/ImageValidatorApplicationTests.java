@@ -1,0 +1,13 @@
+package com.aun1x.imagevalidator;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ImageValidatorApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
