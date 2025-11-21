@@ -78,7 +78,7 @@ spring.servlet.multipart.max-request-size=5MB
 server.port=8080
 
 # Logging
-logging.level.com.aun1x.imagevalidator=DEBUG
+logging.level.com.tvscs.imagevalidator=DEBUG
 logging.level.org.opencv=INFO
 
 # Actuator endpoints

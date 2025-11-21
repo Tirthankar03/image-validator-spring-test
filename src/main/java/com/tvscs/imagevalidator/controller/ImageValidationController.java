@@ -1,4 +1,4 @@
-package com.aun1x.imagevalidator.controller;
+package com.tvscs.imagevalidator.controller;
 
 import java.io.IOException;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.aun1x.imagevalidator.domain.dto.ValidationResponse;
-import com.aun1x.imagevalidator.service.ImageValidationService;
+import com.tvscs.imagevalidator.domain.dto.ValidationResponse;
+import com.tvscs.imagevalidator.service.ImageValidationService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

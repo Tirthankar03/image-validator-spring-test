@@ -1,4 +1,4 @@
-package com.aun1x.imagevalidator.domain.dto;
+package com.tvscs.imagevalidator.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

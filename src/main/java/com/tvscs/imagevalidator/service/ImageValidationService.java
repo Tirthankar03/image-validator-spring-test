@@ -1,4 +1,4 @@
-package com.aun1x.imagevalidator.service;
+package com.tvscs.imagevalidator.service;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;

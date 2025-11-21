@@ -1,14 +1,15 @@
-package com.aun1x.imagevalidator;
+package com.tvscs.imagevalidator;
 
-import com.aun1x.imagevalidator.service.ImageValidationService;
+import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
 
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
+import com.tvscs.imagevalidator.service.ImageValidationService;
 
 @SpringBootTest
 class ImageValidationServiceTest {

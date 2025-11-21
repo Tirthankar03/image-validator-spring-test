@@ -1,4 +1,4 @@
-package com.aun1x.imagevalidator;
+package com.tvscs.imagevalidator;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
