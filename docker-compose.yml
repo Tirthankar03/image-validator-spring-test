@@ -1,11 +1,16 @@
 version: '3.1'
 
 services:
-
   image-validator:
     build: .
     ports:
-      - "8080:8080"
+      - "${HOST_PORT:-8080}:8080"  # Optional: Externalize host port mapping too
     restart: always
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      # Add dynamic props here (overrides .env if present)
+      - MULTIPART_MAX_FILE_SIZE=5MB
+      - MULTIPART_MAX_REQUEST_SIZE=5MB
+      - SERVER_PORT=8080
+      - LOGGING_IMAGE_VALIDATOR=DEBUG
+      - LOGGING_OPENCV=INFO
